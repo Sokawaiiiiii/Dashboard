@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Creation Roles Research Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .tab-btn.active { border-bottom: 2px solid #3b82f6; color: #3b82f6; font-weight: bold; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <header class="bg-white shadow-sm sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-gray-900">
+                <i class="fas fa-chart-pie text-blue-500 mr-2"></i>Content Creation Roles
+            </h1>
+            <span class="text-sm text-gray-500">Research & Analysis Dashboard</span>
+        </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <div class="flex border-b border-gray-200 mb-6 overflow-x-auto">
+            <button class="tab-btn active px-4 py-2 text-gray-600 hover:text-blue-500 focus:outline-none whitespace-nowrap" onclick="openTab('overview')">
+                <i class="fas fa-search mr-2"></i>Overview & Patterns
+            </button>
+            <button class="tab-btn px-4 py-2 text-gray-600 hover:text-blue-500 focus:outline-none whitespace-nowrap" onclick="openTab('skills')">
+                <i class="fas fa-brain mr-2"></i>Core & Complementary Skills
+            </button>
+            <button class="tab-btn px-4 py-2 text-gray-600 hover:text-blue-500 focus:outline-none whitespace-nowrap" onclick="openTab('tools')">
+                <i class="fas fa-tools mr-2"></i>Tools & Platforms
+            </button>
+        </div>
+
+        <div id="overview" class="tab-content active space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 col-span-1">
+                    <h2 class="text-lg font-bold mb-4 text-gray-800 border-b pb-2">Profiles Analyzed</h2>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Social Media Content Evaluator</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Senior Content Specialist</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Content Creator & Prod. Coordinator</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Social Media Content Producer</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Creative Specialist / Copywriter</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>AI Content Creator</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Creative Director</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Lead Content Specialist</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Assoc. Manager - Creative Prod.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 col-span-1 md:col-span-2">
+                    <h2 class="text-lg font-bold mb-4 text-gray-800 border-b pb-2">Common Patterns Identified</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="p-4 bg-blue-50 rounded-lg">
+                            <h3 class="font-bold text-blue-800"><i class="fas fa-bullseye mr-2"></i>Strategic Alignment</h3>
+                            <p class="text-sm text-gray-600 mt-1">Focus on aligning content with brand voice, marketing objectives, and audience personas across all levels.</p>
+                        </div>
+                        <div class="p-4 bg-purple-50 rounded-lg">
+                            <h3 class="font-bold text-purple-800"><i class="fas fa-chart-line mr-2"></i>Performance-Driven</h3>
+                            <p class="text-sm text-gray-600 mt-1">Heavy emphasis on measuring success using data, evaluating engagement metrics, and iterating content.</p>
+                        </div>
+                        <div class="p-4 bg-green-50 rounded-lg">
+                            <h3 class="font-bold text-green-800"><i class="fas fa-mobile-alt mr-2"></i>Multi-Platform Versatility</h3>
+                            <p class="text-sm text-gray-600 mt-1">Expectation to be "platform-native" understanding nuances of TikTok, Instagram, LinkedIn, and Web.</p>
+                        </div>
+                        <div class="p-4 bg-yellow-50 rounded-lg">
+                            <h3 class="font-bold text-yellow-800"><i class="fas fa-users mr-2"></i>Collaborative Workflows</h3>
+                            <p class="text-sm text-gray-600 mt-1">Cross-functional liaison between designers, copywriters, technical teams, and external stakeholders.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="skills" class="tab-content">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="space-y-6">
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                        <h2 class="text-lg font-bold mb-4 text-blue-600 border-b pb-2">Core Skills (Non-Negotiable)</h2>
+                        <ul class="space-y-3">
+                            <li><strong>Writing & Storytelling:</strong> Copywriting, editing, and narrative development.</li>
+                            <li><strong>SEO & Analytics:</strong> Keyword research, organic traffic generation, and data interpretation.</li>
+                            <li><strong>Visual Literacy:</strong> Conceptualizing graphic/video assets aligned with brand.</li>
+                            <li><strong>Content Moderation:</strong> Judging content quality, legality, and policy compliance.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                        <h2 class="text-lg font-bold mb-4 text-purple-600 border-b pb-2">Complementary Skills (Power Skills)</h2>
+                        <ul class="space-y-3">
+                            <li><strong>AI Literacy:</strong> Prompt engineering (ChatGPT, Midjourney) for workflow speed.</li>
+                            <li><strong>Project Management:</strong> Handling timelines, budgets, and team bandwidth.</li>
+                            <li><strong>Consumer Psychology:</strong> Understanding behavioral triggers for engagement.</li>
+                            <li><strong>Leadership:</strong> Mentoring junior creators and maintaining creative standards.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 flex flex-col items-center justify-center">
+                    <h2 class="text-lg font-bold mb-2 text-gray-800">Skill Distribution Landscape</h2>
+                    <p class="text-sm text-gray-500 mb-4">Relative importance mapping across the job profiles.</p>
+                    <div class="w-full max-w-md">
+                        <canvas id="skillsRadarChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tools" class="tab-content">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center text-pink-500 mr-3">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-800">Social Media</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm">Instagram, TikTok, LinkedIn, YouTube, X (Twitter), Facebook</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center text-orange-500 mr-3">
+                            <i class="fas fa-palette text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-800">Design & Media</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm">Adobe Creative Suite (Photoshop, Premiere, After Effects), Canva, CapCut</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-500 mr-3">
+                            <i class="fas fa-robot text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-800">AI Content</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm">ChatGPT, Claude, Jasper, Copy.ai, Midjourney, Stable Diffusion</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-500 mr-3">
+                            <i class="fas fa-chart-bar text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-800">Analytics & SEO</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm">Google Analytics, SEMrush, Ahrefs, Native Platform Insights</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-500 mr-3">
+                            <i class="fas fa-tasks text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-800">Project Management</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm">JIRA, Trello, Workfront, Slack, Microsoft Projects</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 mr-3">
+                            <i class="fas fa-server text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-800">CMS Platforms</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm">WordPress, Drupal, Joomla</p>
+                </div>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 w-full">
+                <h2 class="text-lg font-bold mb-4 text-gray-800">Tool Stack Frequency across Job Profiles</h2>
+                <div class="relative h-64 w-full">
+                    <canvas id="toolsBarChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Tab Switching Logic
+        function openTab(tabId) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            // Remove active class from buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected tab
+            document.getElementById(tabId).classList.add('active');
+            // Add active class to clicked button
+            event.currentTarget.classList.add('active');
+        }
+
+        // Initialize Charts when the window loads
+        window.onload = function() {
+            // 1. Radar Chart for Skills
+            const ctxRadar = document.getElementById('skillsRadarChart').getContext('2d');
+            new Chart(ctxRadar, {
+                type: 'radar',
+                data: {
+                    labels: ['Copywriting', 'SEO/Analytics', 'Visual Design', 'AI Prompts', 'Project Mgmt', 'Leadership'],
+                    datasets: [{
+                        label: 'Core / Executive Roles',
+                        data: [90, 80, 85, 75, 60, 50],
+                        fill: true,
+                        backgroundColor: 'rgba(59, 130, 246, 0.2)',
+                        borderColor: 'rgb(59, 130, 246)',
+                        pointBackgroundColor: 'rgb(59, 130, 246)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgb(59, 130, 246)'
+                    }, {
+                        label: 'Management / Lead Roles',
+                        data: [70, 85, 65, 60, 95, 90],
+                        fill: true,
+                        backgroundColor: 'rgba(168, 85, 247, 0.2)',
+                        borderColor: 'rgb(168, 85, 247)',
+                        pointBackgroundColor: 'rgb(168, 85, 247)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgb(168, 85, 247)'
+                    }]
+                },
+                options: {
+                    elements: { 
+                        line: { tension: 0 } // Changed from 0.3 to 0 for straight lines
+                    }
+                }
+            });
+
+            // 2. Bar Chart for Tools
+            const ctxBar = document.getElementById('toolsBarChart').getContext('2d');
+            new Chart(ctxBar, {
+                type: 'bar',
+                data: {
+                    labels: ['Social Media Apps', 'Design Software', 'Analytics/SEO', 'AI Platforms', 'Project Mgmt', 'CMS'],
+                    datasets: [{
+                        label: 'Expected Proficiency / Mention Frequency',
+                        data: [95, 80, 75, 65, 70, 50],
+                        backgroundColor: [
+                            'rgba(236, 72, 153, 0.7)', // Pink
+                            'rgba(249, 115, 22, 0.7)', // Orange
+                            'rgba(20, 184, 166, 0.7)', // Teal
+                            'rgba(99, 102, 241, 0.7)', // Indigo
+                            'rgba(59, 130, 246, 0.7)', // Blue
+                            'rgba(156, 163, 175, 0.7)'  // Gray
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, max: 100 }
+                    },
+                    plugins: {
+                        legend: { display: false }
+                    }
+                }
+            });
+        };
+    </script>
+</body>
+</html>
